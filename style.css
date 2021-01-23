@@ -110,6 +110,10 @@ p {
   font-weight: var(--weight-semi-bold);
 }
 
+.navbar__logo a {
+  margin: 5px;
+}
+
 .navbar__menu__item {
   padding: 8px 12px;
   margin: 0 4px;
@@ -123,6 +127,14 @@ p {
 
 .navbar__menu__item:hover {
   background-color: var(--color-dark-grey);
+}
+
+.navbar__toggle-btn {
+  position: absolute;
+  right: 32px;
+  top: 38px;
+  font-size: 24px;
+  color: var(--color-white);
 }
 
 /* Home */
@@ -456,4 +468,23 @@ p {
 .contact__links i:hover {
   transform: scale(1.1);
   color: var(--color-yellow);
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
 }
