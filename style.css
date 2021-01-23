@@ -132,9 +132,10 @@ p {
 .navbar__toggle-btn {
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 24px;
   font-size: 20px;
   color: var(--color-white);
+  display: none;
 }
 
 /* Home */
@@ -474,6 +475,8 @@ p {
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
     display: block;
+    border: 0;
+    outline: 0;
   }
 
   #navbar {
