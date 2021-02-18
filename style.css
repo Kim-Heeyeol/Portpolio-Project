@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&family=Open+Sans:wght@600&display=swap');
+
 /* Global */
 
 :root {
@@ -39,8 +41,8 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+body {font
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   cursor: default;
 }
@@ -128,9 +130,14 @@ p {
 
 /* Section common */
 .section {
-  padding: 50px;
+  padding: 40px;
   text-align: center;
   margin: auto;
+}
+
+.section p {
+  margin: 40px 150px;
+  font-family: 'Noto Serif KR', serif;
 }
 
 .section__container {
