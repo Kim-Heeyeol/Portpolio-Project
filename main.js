@@ -1,9 +1,10 @@
 'use strict'
 
-// Make navbar transparent when it is on the top
-const navbar = document.querySelector('#navbar');
+const navbar = document.querySelector('#navbar')
 const navbarHeight = navbar.getBoundingClientRect().height;
-document.addEventListener ('scroll', () => {
+document.addEventListener('scroll', () => {
+    console.log(window.scrollY);
+    console.log(`navbarHeight: ${navbarHeight}`);
     if (window.scrollY > navbarHeight) {
         navbar.classList.add('navbar--dark');
     } else {
@@ -11,16 +12,22 @@ document.addEventListener ('scroll', () => {
     }
 });
 
-// Handle scrolling when tapping on the navbar menu
-const navbarMenu = document.querySelector('.navbar__menu');
-navbarMenu.addEventListener('click', (event) => {
-    const target = event.target;
-    const link = target.dataset.link;
-    if (link == null) {
-        return;    
-    }
-
-    console.log(event.target.dataset.link);
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({ behavior: 'smooth'});
+// Show "arrow up" button when scrolling down
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+    home.style.opacity = 1 - window.scrollY / homeHeight;
 });
+const arrow = document.querySelector('.arrow');
+document.addEventListener('scroll', () => {
+    if (window.scrollY > homeHeight / 2) {
+        arrow.classList.add('visible');
+    } else {
+        arrow.classList.remove('visible');
+    }
+});
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({ behavior: 'smooth'});
+}

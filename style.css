@@ -41,7 +41,7 @@
   box-sizing: border-box;
 }
 
-body {font
+body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   cursor: default;
@@ -102,6 +102,7 @@ p {
   background-color: var(--color-black);
   color: var(--color-white);
   padding: 16px;
+  background-color: transparent;
 }
 
 .navbar__menu {
@@ -200,6 +201,20 @@ p {
 .contact__links i:hover {
   transform: scale(1.1);
   color: var(--color-orange);
+}
+
+/* Scroll */
+.arrow {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  border: 0;
 }
 
 /* For below 768px screen width */
