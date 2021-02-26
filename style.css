@@ -102,7 +102,7 @@ p {
   background-color: var(--color-black);
   color: var(--color-white);
   padding: 16px;
-  background-color: transparent;
+  z-index: 1;
 }
 
 .navbar__menu {
@@ -149,7 +149,7 @@ p {
 .about__majors {
   display: flex;
   justify-content: space-around;
-  margin: 80px 0;
+  margin: 80px 40px;
 }
 
 .major__icon {
@@ -203,18 +203,25 @@ p {
   color: var(--color-orange);
 }
 
-/* Scroll */
 .arrow {
   position: fixed;
   bottom: 50px;
   right: 50px;
-  font-size: 40px;
   width: 50px;
   height: 50px;
+  font-size: 40px;
   color: var(--color-white);
   background-color: var(--color-orange);
   border-radius: 50%;
   border: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
+}
+
+.arrow.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* For below 768px screen width */
